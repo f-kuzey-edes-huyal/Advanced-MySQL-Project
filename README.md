@@ -49,13 +49,13 @@ Lucky Shrub need to find out what quantities of wood panels they are selling. Th
 
 Task 6: 
 
-Lucky Shrub want to know more about the activities of the clients who use their online store. The system logs the ClientID and the ProductID information for each activity in a JSON Properties column inside the Activity table. This occurs while clients browse through Lucky Shrub products online.
+Lucky Shrub want to know more about the activities of the clients who use their online store. The system logs the **ClientID** and the **ProductID** information for each activity in a JSON Properties column inside the **Activity** table. This occurs while clients browse through Lucky Shrub products online.
 
 Utilize the Properties data to output the following information:
 
-The full name and contact number of each client from the Clients table.
+The full name and contact number of each client from the **Clients** table.
 
-The ProductID for all clients who performed activities.
+The **ProductID** for all clients who performed activities.
 
 Tip:
 Use the following code to access the property value with double quotations from the JSON datatype: ->'$.PropertyName
