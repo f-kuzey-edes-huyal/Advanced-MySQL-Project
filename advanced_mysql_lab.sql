@@ -47,6 +47,9 @@ SELECT C.FullName, A.Street, A.County FROM Addresses AS A INNER JOIN Clients AS 
 SELECT CONCAT(SUM(Cost), "  (2020)") AS "P2 Product Quantity Sold" FROM Orders WHERE ProductID = "P2" AND YEAR(Date) = 2020 UNION SELECT CONCAT(SUM(Cost),  "  (2021)") FROM Orders WHERE  ProductID  = "P2" AND YEAR(Date) = 2021 UNION SELECT CONCAT(SUM(Cost), " (2022)" ) FROM Orders WHERE  ProductID  = "P2" AND YEAR(Date)= 2022 ;
 
 
+-- USE Common Table Expression  to Optimize the code given above
+ WITH Total_Cost_2020 AS (SELECT CONCAT(SUM(Cost), " 2020") AS "Total Sum of P2 Product" FROM Orders WHERE YEAR(Date) = 2020   AND ProductID = "P2"  ), Total_Cost_2021 AS (SELECT CONCAT(SUM(Cost), " 2021")  FROM Orders WHERE YEAR(Date) = 2021 AND ProductID = "P2"),  Total_Cost_2022 AS (SELECT CONCAT(SUM(Cost), " 2022") FROM Orders WHERE YEAR(Date)= 2022   AND ProductID = "P2"  ) SELECT * FROM Total_Cost_2020 UNION SELECT * FROM Total_Cost_2021 UNION SELECT * FROM Total_Cost_2022;
+
 
 -- TASK 6
 
